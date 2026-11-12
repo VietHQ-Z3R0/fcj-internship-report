@@ -54,7 +54,7 @@ h5 {
   color: var(--MAIN-TITLES-TEXT-color) !important;
 }
 
-a {
+a, a:visited {
   color: var(--MAIN-LINK-color);
 }
 
@@ -131,7 +131,7 @@ a:hover {
   color: var(--MENU-SEARCH-BOX-ICONS-color);
 }
 
-#sidebar a {
+#sidebar a, #sidebar a:visited {
   color: var(--MENU-SECTIONS-LINK-color);
 }
 
