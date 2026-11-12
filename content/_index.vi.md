@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 14/09/2025 đến ngày 14/12/2025
 
-![Ảnh đại diện của bạn](/images/avatar.png)
+![Hoàng Quốc Việt](/images/avatar-viethq.png)
 
 
 

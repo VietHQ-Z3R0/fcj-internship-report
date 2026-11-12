@@ -31,7 +31,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 14/09/2025 to 14/12/2025
 
-![Your profile picture](/images/avatar.png)
+![Hoang Quoc Viet](/images/avatar-viethq.png)
 
 ### Report Content
 
