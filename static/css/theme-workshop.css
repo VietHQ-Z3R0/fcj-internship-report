@@ -1,9 +1,9 @@
 :root {
-  --MAIN-TEXT-color: #323235; /* Color of text by default */
-  --MAIN-TITLES-TEXT-color: #778ba5; /* Color of titles h2-h3-h4-h5 */
-  --MAIN-LINK-color: #4881cd; /* Color of links */
-  --MAIN-LINK-HOVER-color: #599af1; /* Color of hovered links */
-  --MAIN-ANCHOR-color: #4881cd; /* color of anchors on titles */
+  --MAIN-TEXT-color: #111827; /* Đậm nét, tương phản cao, không bị mờ */
+  --MAIN-TITLES-TEXT-color: #0f172a; /* Tiêu đề xanh đen đậm rõ nét */
+  --MAIN-LINK-color: #0284c7; /* Color of links */
+  --MAIN-LINK-HOVER-color: #0369a1; /* Color of hovered links */
+  --MAIN-ANCHOR-color: #0284c7; /* color of anchors on titles */
 
   --MENU-HEADER-BG-color: #283e5b; /* Background color of menu header */
   --MENU-HEADER-BORDER-color: #435c7c; /*Color of menu header border */
@@ -170,17 +170,78 @@ div.notices p:first-child:before {
 
 body {
   color: var(--MAIN-TEXT-color) !important;
-  font-family: "Amazon Ember", "Work Sans", sans-serif;
+  font-family: "Amazon Ember", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 500 !important;
   text-align: left;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#body-inner p,
+#body-inner li {
+  color: #111827 !important;
+  font-weight: 450 !important;
+  line-height: 1.7;
+}
+
+#body-inner strong,
+#body-inner b {
+  color: #000000 !important;
+  font-weight: 700 !important;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   color: var(--MAIN-TITLES-TEXT-color) !important;
-  font-family: "Amazon Ember", "Montserrat", sans-serif;
+  font-family: "Amazon Ember", "Montserrat", "Segoe UI", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+h2, h3 {
+  font-weight: 700 !important;
+  color: #1e293b !important;
+}
+
+table {
+  border: 1px solid #cbd5e1 !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+th {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 0.6rem !important;
+}
+
+td {
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  font-weight: 450 !important;
+  padding: 0.6rem !important;
+}
+
+#sidebar a, #sidebar a:visited {
+  color: #e2e8f0 !important;
+  font-weight: 500 !important;
+}
+
+#sidebar ul.topics > li > a b {
+  color: #fbbf24 !important;
+  font-weight: 700 !important;
 }
 
 .ui-state-default,
