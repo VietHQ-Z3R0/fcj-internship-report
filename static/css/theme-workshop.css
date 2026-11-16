@@ -1,9 +1,9 @@
 :root {
   --MAIN-TEXT-color: #24292f; /* Màu chữ rõ ràng, thanh lịch */
-  --MAIN-TITLES-TEXT-color: #778ba5; /* Màu xanh dương nhạt chuẩn ban đầu của workshop */
+  --MAIN-TITLES-TEXT-color: #3b5982; /* Màu xanh dương đậm hơn, rõ nét và chuyên nghiệp */
   --MAIN-LINK-color: #0284c7; /* Color of links */
   --MAIN-LINK-HOVER-color: #0369a1; /* Color of hovered links */
-  --MAIN-ANCHOR-color: #778ba5; /* color of anchors on titles */
+  --MAIN-ANCHOR-color: #3b5982; /* color of anchors on titles */
 
   --MENU-HEADER-BG-color: #283e5b; /* Background color of menu header */
   --MENU-HEADER-BORDER-color: #435c7c; /*Color of menu header border */
