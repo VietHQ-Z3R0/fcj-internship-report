@@ -1,6 +1,6 @@
 :root {
-  --MAIN-TEXT-color: #111827; /* Đậm nét, tương phản cao, không bị mờ */
-  --MAIN-TITLES-TEXT-color: #0f172a; /* Tiêu đề xanh đen đậm rõ nét */
+  --MAIN-TEXT-color: #24292f; /* Màu chữ tự nhiên, thanh lịch, rõ ràng */
+  --MAIN-TITLES-TEXT-color: #1f2937; /* Tiêu đề đậm vừa phải, hài hòa với mẫu */
   --MAIN-LINK-color: #0284c7; /* Color of links */
   --MAIN-LINK-HOVER-color: #0369a1; /* Color of hovered links */
   --MAIN-ANCHOR-color: #0284c7; /* color of anchors on titles */
@@ -170,25 +170,25 @@ div.notices p:first-child:before {
 
 body {
   color: var(--MAIN-TEXT-color) !important;
-  font-family: "Amazon Ember", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  font-weight: 500 !important;
+  font-family: "Amazon Ember", "Work Sans", "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 400 !important;
   text-align: left;
-  line-height: 1.7;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 #body-inner p,
 #body-inner li {
-  color: #111827 !important;
-  font-weight: 450 !important;
-  line-height: 1.7;
+  color: #24292f !important;
+  font-weight: 400 !important;
+  line-height: 1.65;
 }
 
 #body-inner strong,
 #body-inner b {
-  color: #000000 !important;
-  font-weight: 700 !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
 }
 
 h1,
@@ -199,49 +199,49 @@ h5,
 h6 {
   color: var(--MAIN-TITLES-TEXT-color) !important;
   font-family: "Amazon Ember", "Montserrat", "Segoe UI", sans-serif !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   letter-spacing: -0.01em;
 }
 
 h1 {
-  font-weight: 800 !important;
-  color: #0f172a !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
 }
 
 h2, h3 {
-  font-weight: 700 !important;
-  color: #1e293b !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
 }
 
 table {
-  border: 1px solid #cbd5e1 !important;
+  border: 1px solid #e2e8f0 !important;
   border-collapse: collapse !important;
   width: 100% !important;
 }
 
 th {
-  background: #f1f5f9 !important;
-  color: #0f172a !important;
-  font-weight: 700 !important;
-  border: 1px solid #cbd5e1 !important;
+  background: #f8fafc !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  border: 1px solid #e2e8f0 !important;
   padding: 0.6rem !important;
 }
 
 td {
-  border: 1px solid #cbd5e1 !important;
-  color: #1e293b !important;
-  font-weight: 450 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+  font-weight: 400 !important;
   padding: 0.6rem !important;
 }
 
 #sidebar a, #sidebar a:visited {
   color: #e2e8f0 !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 
 #sidebar ul.topics > li > a b {
-  color: #fbbf24 !important;
-  font-weight: 700 !important;
+  color: #f59e0b !important;
+  font-weight: 600 !important;
 }
 
 .ui-state-default,
