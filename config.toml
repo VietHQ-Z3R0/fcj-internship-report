@@ -2,6 +2,9 @@ baseURL = "https://VietHQ-Z3R0.github.io/fcj-internship-report/"
 relativeURLs = false
 canonifyURLs = true
 defaultContentLanguage = "en"
+buildFuture = true
+buildDrafts = true
+buildExpired = true
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
