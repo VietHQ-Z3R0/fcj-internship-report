@@ -1,27 +1,27 @@
 ﻿---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-10-22
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Amazon S3 Lifecycle – 22/10/2026
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Amazon S3 Lifecycle provides automated storage management capabilities, allowing organizations to define rules for transitioning or deleting objects based on their age and storage requirements. This helps reduce unnecessary storage costs by automatically managing temporary uploads, abandoned files, and outdated data without requiring constant manual intervention.
 
-Key points to know:
+**Key points to know:**
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+- Lifecycle rules can automatically expire objects based on predefined retention periods.
+- Separating temporary uploads (`staging/`) from published objects (`published/`) helps prevent active application data from being accidentally deleted.
+- The `AbortIncompleteMultipartUpload` action removes incomplete multipart uploads that would otherwise continue consuming storage.
+- Lifecycle expiration and incomplete multipart upload cleanup address different types of unused data and should be configured separately.
+- Applications can use AWS Lambda and Amazon DynamoDB to validate upload sessions and manage the transition from temporary to published objects.
+- Idempotent processing and data reconciliation help handle failures during object copying and database updates.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+This approach is especially useful for applications that frequently handle user-generated uploads, such as e-commerce platforms, content management systems, and file-sharing services, where abandoned uploads can gradually accumulate and increase storage costs.
 
-...Image...
+**Image:** [Insert Image]
 
-...Link...
+**Link:** [Insert Facebook Post Link]
 
-...Guide...
+**Guide:** Amazon S3 Lifecycle – Examples of Lifecycle Configurations; Managing Incomplete Multipart Uploads.

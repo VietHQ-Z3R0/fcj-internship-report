@@ -1,27 +1,27 @@
 ﻿---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-10-22
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Amazon S3 Lifecycle – 22/10/2026
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Amazon S3 Lifecycle cung cấp khả năng quản lý lưu trữ tự động, cho phép các tổ chức định cấu hình các quy tắc để chuyển đổi lớp lưu trữ (transition) hoặc xóa đối tượng (delete) dựa trên thời gian tồn tại và yêu cầu lưu trữ. Điều này giúp cắt giảm chi phí lưu trữ không cần thiết bằng cách tự động dọn dẹp các tệp tải lên tạm thời, tệp bị bỏ dở và dữ liệu lỗi thời mà không cần sự can thiệp thủ công liên tục.
 
-Các điểm chính cần nắm:
+**Các điểm chính cần nắm:**
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+- Quy tắc vòng đời (Lifecycle rules) có thể tự động xóa hết hạn (expire) các đối tượng dựa trên khoảng thời gian lưu giữ đã định trước.
+- Việc phân tách các tệp tải lên tạm thời (`staging/`) khỏi các đối tượng đã phát hành (`published/`) giúp ngăn ngừa việc vô tình xóa mất dữ liệu đang hoạt động của ứng dụng.
+- Thao tác `AbortIncompleteMultipartUpload` giúp hủy và loại bỏ các phần tải lên phân đoạn chưa hoàn tất (multipart uploads), vốn sẽ tiếp tục chiếm dụng dung lượng lưu trữ nếu không được xử lý.
+- Cơ chế hết hạn vòng đời (Lifecycle expiration) và dọn dẹp multipart upload dang dở giải quyết hai loại dữ liệu rác khác nhau và cần được cấu hình riêng biệt.
+- Ứng dụng có thể sử dụng AWS Lambda và Amazon DynamoDB để xác thực các phiên tải lên và quản lý quá trình chuyển đối tượng từ tạm thời sang trạng thái phát hành chính thức.
+- Xử lý bất biến (Idempotent processing) và đối soát dữ liệu (data reconciliation) giúp xử lý các sự cố phát sinh trong quá trình sao chép đối tượng và cập nhật cơ sở dữ liệu.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Phương pháp này đặc biệt hữu ích cho các ứng dụng thường xuyên xử lý nội dung tải lên do người dùng tạo (user-generated uploads) như nền tảng thương mại điện tử, hệ thống quản lý nội dung (CMS) và các dịch vụ chia sẻ tệp — nơi các tệp tải lên bị bỏ dở có thể tích tụ dần theo thời gian và làm tăng chi phí lưu trữ.
 
-...Hình ảnh...
+**Hình ảnh:** [Insert Image]
 
-...Link...
+**Link bài viết:** [Insert Facebook Post Link]
 
-...Hướng dẫn...
+**Tài liệu tham khảo:** Amazon S3 Lifecycle – Examples of Lifecycle Configurations; Managing Incomplete Multipart Uploads.
